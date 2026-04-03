@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Invitación de Francisco!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beast-blue: #00BAF0;
+            --beast-pink: #FF00FF;
+            --beast-dark: #0F0F0F;
+        }
+        body {
+            background-color: var(--beast-dark);
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+        .bangers { font-family: 'Bangers', cursive; }
+
+        .glow-text {
+            text-shadow: 0 0 10px var(--beast-blue), 0 0 20px var(--beast-blue);
+        }
+
+        .beast-gradient {
+            background: linear-gradient(135deg, var(--beast-blue) 0%, var(--beast-pink) 100%);
+        }
+
+        .card-container {
+            border: 4px solid var(--beast-blue);
+            box-shadow: 0 0 30px rgba(0, 186, 240, 0.4);
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: var(--beast-blue); box-shadow: 0 0 20px rgba(0, 186, 240, 0.3); }
+            50% { border-color: var(--beast-pink); box-shadow: 0 0 40px rgba(255, 0, 255, 0.5); }
+        }
+
+        .floating-beast {
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .btn-confirmar {
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .btn-confirmar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--beast-pink);
+        }
+
+        .lightning {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Fondo de Rayos -->
+    <svg class="lightning" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 10 0 L 40 40 L 20 50 L 60 100" stroke="#00BAF0" fill="transparent" stroke-width="0.5"/>
+        <path d="M 90 0 L 60 30 L 80 40 L 40 100" stroke="#FF00FF" fill="transparent" stroke-width="0.5"/>
+    </svg>
+
+    <!-- Contenedor Principal -->
+    <div class="max-w-md w-full card-container bg-zinc-900 rounded-3xl overflow-hidden relative shadow-2xl">
+
+        <!-- Cabecera -->
+        <div class="beast-gradient p-6 text-center">
+            <h2 class="text-xl font-bold tracking-tighter mb-1 uppercase italic">¡Reto de Cumpleaños!</h2>
+            <h1 class="bangers text-6xl glow-text mb-2 tracking-wide uppercase">MIS 7 AÑOS</h1>
+        </div>
+
+        <div class="p-6 text-center space-y-6">
+
+            <!-- Personaje/Icono -->
+            <div class="flex justify-center -mt-16">
+                <div class="w-32 h-32 bg-zinc-900 rounded-full p-2 border-4 border-cyan-400 floating-beast overflow-hidden shadow-lg">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <circle cx="50" cy="50" r="45" fill="#00BAF0" />
+                        <path d="M30 40 Q50 20 70 40 L50 80 Z" fill="white" />
+                        <path d="M35 45 L45 55 M65 45 L55 55" stroke="#0F0F0F" stroke-width="3" />
+                        <circle cx="40" cy="40" r="3" fill="#0F0F0F" />
+                        <circle cx="60" cy="40" r="3" fill="#0F0F0F" />
+                        <path d="M30 35 L40 30 M70 35 L60 30" stroke="#FF00FF" stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="space-y-1">
+                <p class="text-lg font-medium text-gray-300">ESTÁS INVITADO AL EVENTO DE</p>
+                <h3 class="bangers text-6xl text-white tracking-wider">FRANCISCO</h3>
+            </div>
+
+            <!-- Datos del Evento -->
+            <div class="grid grid-cols-1 gap-3 text-left">
+                <div class="flex items-center space-x-4 bg-zinc-800/50 p-3 rounded-2xl border border-zinc-700">
+                    <div class="text-3xl">📅</div>
+                    <div>
+                        <p class="text-[10px] text-cyan-400 font-black uppercase">Fecha del Reto</p>
+                        <p class="font-bold text-lg">Viernes 10 de Abril</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 bg-zinc-800/50 p-3 rounded-2xl border border-zinc-700">
+                    <div class="text-3xl">🕒</div>
+                    <div>
+                        <p class="text-[10px] text-pink-500 font-black uppercase">Horario de Misión</p>
+                        <p class="font-bold text-lg text-white">13:30 a 17:30 hs</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 bg-zinc-800/50 p-3 rounded-2xl border border-zinc-700">
+                    <div class="text-3xl">📍</div>
+                    <div>
+                        <p class="text-[10px] text-yellow-400 font-black uppercase">Ubicación HQ</p>
+                        <p class="font-bold text-sm">Mansión Aventura - Salón Lila Patio</p>
+                        <p class="text-xs text-gray-400 italic">Perito Moreno 2039, Godoy Cruz</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuenta Regresiva -->
+            <div class="space-y-2 py-2">
+                <p class="text-[10px] font-black text-gray-500 uppercase tracking-widest">Iniciando reto en:</p>
+                <div class="grid grid-cols-4 gap-2" id="countdown">
+                    <div class="countdown-box"><div class="text-xl font-black text-cyan-400" id="days">00</div><div class="text-[8px] font-bold">DÍAS</div></div>
+                    <div class="countdown-box"><div class="text-xl font-black text-cyan-400" id="hours">00</div><div class="text-[8px] font-bold">HRS</div></div>
+                    <div class="countdown-box"><div class="text-xl font-black text-cyan-400" id="minutes">00</div><div class="text-[8px] font-bold">MIN</div></div>
+                    <div class="countdown-box"><div class="text-xl font-black text-cyan-400" id="seconds">00</div><div class="text-[8px] font-bold">SEG</div></div>
+                </div>
+            </div>
+
+            <!-- Botones Interactivos -->
+            <div class="pt-2 space-y-3">
+                <button onclick="window.location.href='https://wa.me/542615074960?text=Hola! Confirmo la asistencia al cumple de Francisco. ¡Allí estaremos!'" class="btn-confirmar w-full py-4 rounded-2xl bg-pink-600 font-black text-lg shadow-[0_0_20px_rgba(219,39,119,0.4)]">
+                    ¡ACEPTAR EL RETO!
+                </button>
+                <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Perito+Moreno+2039+Godoy+Cruz+Mendoza')" class="w-full py-3 rounded-2xl border-2 border-cyan-500 text-cyan-400 font-bold text-sm hover:bg-cyan-500/10 transition-colors">
+                    VER MAPA DEL LUGAR
+                </button>
+            </div>
+
+            <p class="text-[10px] text-gray-500 font-bold italic">No olvides suscribirte... ¡y venir con muchas ganas de jugar!</p>
+        </div>
+    </div>
+
+    <script>
+        const targetDate = new Date("April 10, 2026 13:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days > 0 ? days.toString().padStart(2, '0') : "00";
+            document.getElementById("hours").innerText = hours > 0 ? hours.toString().padStart(2, '0') : "00";
+            document.getElementById("minutes").innerText = minutes > 0 ? minutes.toString().padStart(2, '0') : "00";
+            document.getElementById("seconds").innerText = seconds > 0 ? seconds.toString().padStart(2, '0') : "00";
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "<p class='col-span-4 font-black text-pink-500 text-xl animate-pulse'>¡EL RETO HA COMENZADO!</p>";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
